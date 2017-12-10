@@ -1,0 +1,134 @@
+// Generic - layout
+
+.body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper {
+  background-color: $c-navy;
+  background: repeating-linear-gradient(-45deg, $c-navy, $c-navy 40px, #052044 40px, #052044 80px);
+  width: 100%;
+  height: 100%;
+  color: $c-white;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: all 0.3s;
+  transform: translate3d(100%, 0, 0);
+}
+
+.wrapper--active {
+  transform: translate3d(0, 0, 0);
+}
+
+.wrapper--finished {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.content {
+  background-color: $c-navy-transparent;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.content--active {
+  opacity: 1;
+  z-index: 3;
+}
+
+.content__inner {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.block {
+  margin-bottom: 20px;
+
+  @include respond-to-min($bp-medium) {
+    margin-bottom: 40px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.block--half {
+  margin-bottom: 20px;
+}
+
+
+// .grid {
+//   margin-left: #{-$d-gutter};
+//   margin-bottom: $d-gutter-triple;
+//
+//   @supports(display: flex) {
+//     display: flex;
+//     justify-content: center;
+//     flex-wrap: wrap;
+//   }
+//
+//   @include respond-to-min($bp-medium) {
+//     margin-left: #{-$d-gutter};
+//   }
+//
+//   &:last-child {
+//     margin-bottom: 0;
+//   }
+//
+//   &:after {
+//     content: '';
+//     display: block;
+//     clear: both;
+//   }
+// }
+//
+// .col {
+//   width: 100%;
+//   display: inline-block;
+//   float: left;
+//   padding-left: $d-gutter;
+//   margin-bottom: $d-gutter-medium;
+//
+//   @supports(display: flex) {
+//     float: none;
+//   }
+//
+//   @include respond-to-min($bp-medium) {
+//     padding-left: $d-gutter;
+//     margin-bottom: $d-gutter-triple;
+//   }
+//
+//   &:last-child {
+//     margin-bottom: 0;
+//   }
+// }
+//
+// @include widths(12);
+//
+// @include respond-to-min($bp-small) {
+//   @include widths(12, '--sm');
+// }
+//
+// @include respond-to-min($bp-medium) {
+//   @include widths(12, '--md');
+// }
+//
+// @include respond-to-min($bp-large) {
+//   @include widths(12, '--lg');
+// }
