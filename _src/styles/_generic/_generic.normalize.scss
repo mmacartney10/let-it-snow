@@ -22,6 +22,7 @@
   */
 
   body {
+    background-color: #000;
     margin: 0;
     font-family: "Varela Round",Helvetica,Arial,sans-serif;
 
@@ -204,6 +205,10 @@
   /**
   * Correct overflow not hidden in IE 9/10/11.
   */
+
+  svg {
+    display: block;
+  }
 
   svg:not(:root) {
     overflow: hidden;
